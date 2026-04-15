@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — CrowsNest Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black:        #060A10;
+      --navy:         #0A0F1A;
+      --navy-2:       #0D1520;
+      --border:       rgba(255,255,255,0.08);
+      --border-cyan:  rgba(0,188,212,0.3);
+      --white:        #FFFFFF;
+      --muted:        #6B7A8D;
+      --muted-light:  #8C9BAA;
+      --cyan:         #00BCD4;
+      --cyan-dim:     rgba(0,188,212,0.12);
+      --light-bg:     #F8F9FB;
+      --light-border: #E5E8ED;
+      --light-text:   #1A2232;
+      --light-muted:  #5A6675;
+      --font-display: 'Noto Sans', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+      --font-mono:    'IBM Plex Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px; line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(6,10,16,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo svg { display: block; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--cyan); border: 1px solid var(--cyan);
+      border-radius: 4px; padding: 10px 22px; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--cyan); color: var(--navy); }
+
+    /* PAGE LAYOUT */
+    .page-wrap {
+      flex: 1;
+      padding: 120px 60px 80px;
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 260px 1fr;
+      gap: 64px; align-items: start;
+    }
+
+    /* SIDEBAR TOC */
+    .toc {
+      position: sticky; top: 100px;
+      border-left: 1px solid var(--border);
+      padding-left: 24px;
+    }
+    .toc-label {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 20px; display: block;
+    }
+    .toc ol { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .toc a {
+      font-size: 12px; color: var(--muted); text-decoration: none;
+      line-height: 1.5; transition: color 0.2s;
+      display: block; padding: 4px 0;
+    }
+    .toc a:hover { color: var(--cyan); }
+
+    /* CONTENT */
+    .privacy-content {}
+    .privacy-header { margin-bottom: 52px; padding-bottom: 36px; border-bottom: 1px solid var(--border); }
+    .eyebrow {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 16px; display: block;
+    }
+    .privacy-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px); font-weight: 800;
+      letter-spacing: -0.025em; line-height: 1.05; margin-bottom: 16px;
+    }
+    .privacy-header h1 em { font-style: normal; color: var(--cyan); }
+    .meta-row {
+      display: flex; gap: 32px; margin-top: 20px;
+    }
+    .meta-item { }
+    .meta-label {
+      font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
+    }
+    .meta-value { font-size: 13px; font-weight: 400; color: var(--muted-light); }
+
+    /* SECTIONS */
+    .policy-section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section:last-child { border-bottom: none; }
+    .section-num {
+      font-family: var(--font-mono); font-size: 10px; color: var(--cyan);
+      letter-spacing: 0.1em; margin-bottom: 10px; display: block;
+    }
+    .policy-section h2 {
+      font-family: var(--font-display); font-size: 22px; font-weight: 700;
+      letter-spacing: -0.01em; margin-bottom: 20px; scroll-margin-top: 110px;
+    }
+    .policy-section h3 {
+      font-family: var(--font-display); font-size: 15px; font-weight: 600;
+      margin: 24px 0 10px; color: var(--muted-light);
+    }
+    .policy-section p {
+      font-size: 15px; font-weight: 300; color: var(--muted-light);
+      line-height: 1.8; margin-bottom: 14px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul {
+      list-style: none; display: flex; flex-direction: column; gap: 8px;
+      margin: 12px 0 16px 0;
+    }
+    .policy-section ul li {
+      font-size: 14px; font-weight: 300; color: var(--muted-light);
+      line-height: 1.7; padding-left: 20px; position: relative;
+    }
+    .policy-section ul li::before {
+      content: '—'; position: absolute; left: 0;
+      color: var(--cyan); font-family: var(--font-mono); font-size: 11px;
+    }
+    .policy-section a { color: var(--cyan); text-decoration: none; }
+    .policy-section a:hover { text-decoration: underline; }
+    .highlight-box {
+      background: var(--navy-2); border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      border-radius: 8px; padding: 20px 24px; margin: 20px 0;
+    }
+    .highlight-box p {
+      font-family: var(--font-mono); font-size: 12px; color: var(--muted-light);
+      line-height: 1.7; margin: 0;
+    }
+    .contact-card {
+      background: var(--navy-2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 32px; margin-top: 20px;
+    }
+    .contact-card h4 {
+      font-family: var(--font-display); font-size: 16px; font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .contact-card p {
+      font-size: 13px; color: var(--muted); margin-bottom: 6px;
+    }
+    .contact-card p:last-child { margin-bottom: 0; }
+
+    /* FOOTER */
+    footer {
+      background: var(--black); border-top: 1px solid var(--border);
+      padding: 36px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo { display: flex; align-items: center; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-family: var(--font-mono); font-size: 10px; color: #2A3545; }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; } .nav-links { display: none; }
+      .page-wrap { grid-template-columns: 1fr; padding: 100px 24px 60px; gap: 0; }
+      .toc { display: none; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="120" height="50" viewBox="0 0 288 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#fff;stroke-width:0px;}</style></defs><path class="cls-1" d="M127.2,19.9c1.7-1.1,3.3-2.4,4.8-4.3,0,0,0,0,0,0-4.6,1-8.4,3.4-12.6,4.8,0,0,0,0,0,0,1.9-1.6,4.1-2.9,6-4.5,2-1.6,4.2-3.1,5.2-6.2,0,0,0,0,0,0-6.6,3.1-11.6,8-17.8,10.8,0,0,0,0,0,0,3.9-4.1,10-6.2,11.5-12.6,0,0,0,0,0,0-5.5,4.5-11.1,9-16.6,13.5,0,0,0,0,0,0,1.2-2.2,5.2-7.5,5.1-10.4t0,0c-1.4,2.5-3,4.7-3.8,5.6-2.4,2.8-4.9,5.6-7.8,7.9-4.4,3.5-8.3,7.4-13.7,9.8-4.4,2-8.2,5.6-11.1,9.9-.7,1-1.3,2.2-1.7,3.4-.9,3.5-1.7,7.1-2.4,10.6-.7,3.5,0,4.7,3.1,6.5.6.4,1.1.9.9,1.7-.3,1.2-.8,2.2-1.9,2.9-.9.5-1.1-.4-1.6-.8-1.1-1.1-2.8-1.7-4.6-1.7-1.7,0-3.5.6-4.6,1.7-.4.4-.7,1.3-1.6.8-1.1-.7-1.6-1.7-1.9-2.9-.2-.8.2-1.3.9-1.7,3.1-1.9,3.7-3.1,3-6.5-.7-3.6-1.5-7.1-2.4-10.6-.3-1.2-1-2.3-1.7-3.4-2.8-4.2-6.7-7.9-11.1-9.9-5.4-2.4-9.3-6.4-13.7-9.8-2.9-2.3-5.4-5.1-7.8-7.9-.8-1-2.4-3.1-3.8-5.6t0,0c0,2.8,4,8.1,5.1,10.4,0,0,0,0,0,0-5.5-4.5-11.1-9-16.6-13.5,0,0,0,0,0,0,1.5,6.4,7.6,8.4,11.5,12.6,0,0,0,0,0,0-6.2-2.8-11.2-7.7-17.8-10.9,0,0,0,0,0,0,1,3.1,3.2,4.6,5.2,6.2,1.9,1.5,4.1,2.9,6,4.5,0,0,0,0,0,0-4.1-1.4-7.9-3.7-12.6-4.8,0,0,0,0,0,0,1.5,1.9,3.1,3.2,4.8,4.3,1.7,1,3.4,1.9,5.1,2.9,0,0,0,0,0,0-3.1-.6-5.8-2.5-9.4-2.5,0,0,0,0,0,0,3.2,3.6,7.3,5.1,11.2,7,0,0,0,0,0,0-2.3-.6-4.7-1.2-7.5-1.9,0,0,0,0,0,0,2.8,3.8,6.4,5.1,10.7,6.5,0,0,0,0,0,0-1.1.2-1.6.5-1.7.9,0,.3.2.6.8,1.1,2.2,1.9,3.9,1.9,4.2,3.1.1.6.2.7,0,1.4-.3.9,1.3,1.2,2.1,1.7,1,.7,2.5.9,2.1,2.9-.2.9,1,1.2,1.6,1.6,2.6,1.5,5.3,3.1,5.9,6.3.6,3,3.2,5,4.1,7.8.2.5.5,1,.4,1.7,0,.5,0,1.2.2,1.5,1.3,1.3,2.8,2.3,2.9,4.6,0,.9,1.7.7,2.6.7.9,0,1.9.2,1.5,1.3-1.1,2.9.7,2.8,2.6,2.7,0,0,0,0,0,0-.1,2.7.4,3.2,3,2.5,1-.2.9.4,1.1.8.4,1.2.7,2.5,1.1,3.7.2.7,1.1.9,1.6.3.4-.5,1.2-.3,1.4.2.2.4.2.8.3,1.3.5,1.9.8,3.9,3.7,1.7,0,0,0,0,0,0-.2,2.2.2,3.7,1.2,5.1.3.5.3.7.3.8,0,.9-1.1,2-1.9,1.9-.4,0-.4-.4-1-.9-1.8-1.7-3.7-2.6-4.8,0,0,0,0,0,0,0,.8-.3,1.5-.4,2-.2.2,0,.3.3.4.4.1.3,0,.7-.5.9-1.2.4-2.3.6-2.6,2.3,0,0,0,0,0,0,.3-.1,3.3-1.6,4.7-.4.3.3.5.7.6.7.6,1.4-.2,3.2-.3,3.1-.1,0,.4-1.8-.9-2.6-1.9-1.2-4.2,2.4-7.8,7-.5.7-1.2,1.7,0,2.8,1.6,1.4,7.6-4.9,7.7-5,0,.2-3.1,4.4-3.8,5.2h0c-.5.7-1.2,1.8-.3,2.7,0,0,.3.3.7.4,1.5.2,2.5-1.2,4.7-3.6,0,0,0,0,0,0-.5,1-1.1,2-1.5,3-.6,1.3-.5,2.5,1.2,2.7,2.6.3,4.8,1.7,7,2.9,1,.6,1.9.9,2.7.9.9,0,1.7-.4,2.7-.9,2.2-1.2,4.4-2.6,7-2.9,1.7-.2,1.8-1.4,1.2-2.7-.4-1-1-2-1.5-3,0,0,0,0,0,0,2.2,2.3,3.2,3.8,4.7,3.6.5,0,.7-.4.7-.4.9-.9.2-1.9-.3-2.7h0c-.7-.8-3.7-5.1-3.8-5.2,0,0,6.1,6.4,7.7,5,1.1-1,.4-2.1,0-2.8-3.6-4.6-5.9-8.2-7.8-7-1.2.8-.8,2.6-.9,2.6s-1-1.8-.3-3.1c0,0,.2-.4.6-.7,1.4-1.2,4.4.3,4.7.4,0,0,0,0,0,0-.2-1.7-1.4-1.9-2.6-2.3-.5-.2-.6-.6-.5-.9,0-.2.2-.3.4-.4.5-.2,1.2,0,2,.2,0,0,0,0,0,0-1.1-2.6-3-1.7-4.8,0-.6.6-.6.9-1,.9-.8.1-1.9-.9-1.9-1.9,0,0,0-.3.3-.8,1.1-1.4,1.5-2.9,1.2-5.1,0,0,0,0,0,0,2.9,2.3,3.2.2,3.7-1.7,0-.4.2-.8.3-1.3.2-.6,1-.7,1.4-.2.5.6,1.4.4,1.6-.3.4-1.2.7-2.5,1.1-3.7.2-.4.1-1,1.1-.8,2.6.7,3.1.2,3-2.5,0,0,0,0,0,0,1.9.2,3.7.2,2.6-2.7-.4-1.2.6-1.3,1.5-1.3.9,0,2.6.2,2.6-.7,0-2.3,1.6-3.3,2.9-4.6.3-.3.3-1,.2-1.5-.1-.7.2-1.1.4-1.7.9-2.9,3.5-4.8,4.1-7.8.7-3.2,3.4-4.8,5.9-6.3.7-.4,1.8-.7,1.6-1.6-.4-1.9,1.1-2.2,2.1-2.9.8-.5,2.4-.9,2.1-1.7-.2-.7-.2-.8,0-1.4.3-1.2,2-1.2,4.2-3.1.6-.5.8-.8.8-1.1,0-.4-.7-.7-1.7-.9,0,0,0,0,0,0,4.3-1.4,7.9-2.7,10.7-6.5,0,0,0,0,0,0-2.8.7-5.2,1.3-7.5,1.9,0,0,0,0,0,0,3.9-1.9,7.9-3.4,11.2-7,0,0,0,0,0,0-3.6,0-6.4,1.9-9.4,2.5,0,0,0,0,0,0,1.7-1,3.5-1.9,5.1-2.9ZM69.5,78.6c-.5,1.6-.9,3.3-1.5,5.2-.5-1.9-1-3.6-1.5-5.2-.3-.9,0-1.6.7-2.1.2-.2.5-.3.8-.4.3,0,.5.2.8.4.8.5,1,1.2.7,2.1Z"/><g><path class="cls-1" d="M131.2,68.6h10.1v2.9h-10.1c-2,0-3.7-.7-5.1-2.1-1.4-1.4-2.1-3.1-2.1-5.1s.7-3.7,2.1-5.1,3.1-2.1,5.1-2.1h6.9v2.9h-6.9c-1.2,0-2.2.4-3.1,1.3-.8.8-1.3,1.9-1.3,3.1s.4,2.2,1.3,3.1c.9.8,1.9,1.3,3.1,1.3Z"/><path class="cls-1" d="M143.5,71.5h-2.9v-14.5h10.1c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.9.8-1.9,1.3-3.1,1.3h-.6l6.4,11.6h-3.3l-8-14.5h5.4c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-7.2v11.6Z"/><path class="cls-1" d="M163.3,71.5c-2,0-3.7-.7-5.1-2.1s-2.1-3.1-2.1-5.1.7-3.7,2.1-5.1c1.4-1.4,3.1-2.1,5.1-2.1s3.7.7,5.1,2.1,2.1,3.1,2.1,5.1-.7,3.7-2.1,5.1c-1.4,1.4-3.1,2.1-5.1,2.1ZM163.3,68.6c1.2,0,2.2-.4,3.1-1.3.9-.8,1.3-1.9,1.3-3.1s-.4-2.2-1.3-3.1c-.9-.8-1.9-1.3-3.1-1.3s-2.2.4-3.1,1.3c-.9.8-1.3,1.9-1.3,3.1s.4,2.2,1.3,3.1c.8.8,1.9,1.3,3.1,1.3Z"/><path class="cls-1" d="M181.1,63.1l-4.4,9.1-7.2-15.2h3.3l4,8.3,2.7-5.7,1.6-3.4,1.6,3.4,2.7,5.7,4-8.3h3.3l-7.2,15.2-4.4-9.1Z"/><path class="cls-1" d="M206.4,71.5h-18.1l1.4-2.9h16.7c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-5.8c-1.2,0-2.2-.4-3.1-1.3-.9-.8-1.3-1.9-1.3-3.1s.4-2.2,1.3-3.1c.9-.8,1.9-1.3,3.1-1.3h9.4v2.9h-9.4c-.4,0-.8.1-1,.4s-.4.6-.4,1,.1.8.4,1,.6.4,1,.4h5.8c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.9.8-1.9,1.3-3.1,1.3Z"/><path class="cls-1" d="M215.2,61.4v10.1h-2.9v-14.5h2.9l8.7,10.2v-10.2h2.9v14.5h-2.9l-8.7-10.1Z"/><path class="cls-1" d="M244.1,57l-1.4,2.9h-10.1v8.7h15.9l-1.4,2.9h-17.4v-14.5h14.5ZM249.9,65.7h-14.5v-2.9h15.9l-1.4,2.9Z"/><path class="cls-1" d="M264.7,71.5h-18.1l1.4-2.9h16.7c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-5.8c-1.2,0-2.2-.4-3.1-1.3-.9-.8-1.3-1.9-1.3-3.1s.4-2.2,1.3-3.1c.8-.8,1.9-1.3,3.1-1.3h9.4v2.9h-9.4c-.4,0-.8.1-1,.4s-.4.6-.4,1,.1.8.4,1,.6.4,1,.4h5.8c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.8.8-1.9,1.3-3.1,1.3Z"/><path class="cls-1" d="M278.2,59.9v17.4h-2.9v-17.4h-7.2v-2.9h16v2.9h-5.8Z"/></g></svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#problem">Problem</a></li>
+    <li><a href="index.html#solution">Solution</a></li>
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#team">Team</a></li>
+  </ul>
+  <a href="demo.html" class="nav-cta">Request a Demo</a>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="toc">
+    <span class="toc-label">Contents</span>
+    <ol>
+      <li><a href="#s1">1. Introduction</a></li>
+      <li><a href="#s2">2. Roles & Scope</a></li>
+      <li><a href="#s3">3. Data We Collect</a></li>
+      <li><a href="#s4">4. Legal Bases (GDPR)</a></li>
+      <li><a href="#s5">5. Data Privacy Framework</a></li>
+      <li><a href="#s6">6. International Transfers</a></li>
+      <li><a href="#s7">7. Data Sharing</a></li>
+      <li><a href="#s8">8. Data Security</a></li>
+      <li><a href="#s9">9. Data Retention</a></li>
+      <li><a href="#s10">10. Individual Rights</a></li>
+      <li><a href="#s11">11. Disclosures by Law</a></li>
+      <li><a href="#s12">12. Dispute Resolution</a></li>
+      <li><a href="#s13">13. Choice</a></li>
+      <li><a href="#s14">14. Cookies</a></li>
+      <li><a href="#s15">15. Children's Data</a></li>
+      <li><a href="#s16">16. Policy Changes</a></li>
+      <li><a href="#s17">17. Contact</a></li>
+    </ol>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <article class="privacy-content">
+    <header class="privacy-header">
+      <span class="eyebrow">Legal</span>
+      <h1>Privacy <em>Policy</em></h1>
+      <div class="meta-row">
+        <div class="meta-item">
+          <div class="meta-label">Effective Date</div>
+          <div class="meta-value">23 February 2026</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Last Updated</div>
+          <div class="meta-value">23 February 2026</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="policy-section" id="s1">
+      <span class="section-num">// 01</span>
+      <h2>Introduction</h2>
+      <p>CrowsNest Systems, Inc. ("<b>CrowsNest</b>," "we," "our," or "us") is a cybersecurity software company providing governance, risk, and compliance automation platforms for enterprise customers.</p>
+      <p>We are committed to protecting personal data and complying with:</p>
+      <ul>
+        <li>The <b>EU General Data Protection Regulation (EU) 2016/679 ("GDPR")</b></li>
+        <li>The <b>UK GDPR</b></li>
+        <li>The <b>US-EU Data Privacy Framework (DPF)</b></li>
+        <li>The <b>Swiss-US Data Privacy Framework</b></li>
+        <li>Applicable U.S. federal and state privacy laws</li>
+      </ul>
+      <p>This Privacy Policy explains how we collect, use, disclose, and safeguard personal data when:</p>
+      <ul>
+        <li>you visit our website</li>
+        <li>you engage with us as a customer or prospect</li>
+        <li>you use our products</li>
+        <li>you interact with us in a professional capacity</li>
+      </ul></p>
+    </div>
+
+    <div class="policy-section" id="s2">
+      <span class="section-num">// 02</span>
+      <h2>Roles and Scope of Processing</h2>
+      <p>CrowsNest operates in two distinct roles:</p>
+      <h3>2.1 Controller</h3>
+      <p>We act as a data controller when we process personal data for:</p>
+      <ul>
+        <li>website visitors</li>
+        <li>marketing communications</li>
+        <li>event participation</li>
+        <li>business contact management</li>
+        <li>recruitment activities</li>
+      </ul>
+      <h3>2.2 Processor</h3>
+      <p>We act as a data processor when we process personal data on behalf of our enterprise customers in connection with our cybersecurity automation platform. In those cases: </p>
+      <ul>
+        <li>we process data solely pursuant to a Data Processing Agreement (DPA)</li>
+        <li>customers determine the purposes and means of processing</li>
+        <li>we implement appropriate technical and organizational safeguards</li>
+      </ul>
+    </div>
+
+    <div class="policy-section" id="s3">
+      <span class="section-num">// 03</span>
+      <h2>Categories of Personal Data We Collect</h2>
+      <h3>3.1 Website & Marketing Data (Controller)</h3>
+      <ul>
+        <li>Name</li>
+        <li>Business email address</li>
+        <li>Company name</li>
+        <li>Job title</li>
+        <li>Phone number (if provided)</li>
+        <li>IP address</li>
+        <li>Browser/device information</li>
+        <li>Cookie identifiers</li>
+      </ul>
+      <h3>3.2 Customer & Account Data (Controller)</h3>
+      <ul>
+        <li>Account administrator details</li>
+        <li>Contract and billing contact information</li>
+        <li>Business communications</li>
+      </ul>
+      <h3>3.3 Product Data (Processor)</h3>
+      <p>Depending on customer configuration, our platform may process: </p>
+      <ul>
+        <li>usernames</li>
+        <li>corporate email addresses</li>
+        <li>access logs</li>
+        <li>system identifiers</li>
+        <li>role/permission mappings</li>
+        <li>security telemetry metadata</li>
+      </ul> 
+      <p>Our platform is not designed to intentionally collect: </p>
+      <ul>
+        <li>sensitive personal data</li>
+        <li>biometric data</li>
+        <li>health data</li>
+        <li>consumer behavioral profiling data</li>
+      </ul>
+    </div>
+
+    <div class="policy-section" id="s4">
+      <span class="section-num">// 04</span>
+      <h2>Legal Bases for Processing (GDPR)</h2>
+      <p>Where GDPR applies, we rely on the following legal bases:</p>
+      <ul>
+        <li>Article 6(1)(b) – Performance of a contract</li>
+        <li>Article 6(1)(f) – Legitimate interests</li>
+        <li>Article 6(1)(a) – Consent (where required)</li>
+        <li>Article 6(1)(c) – Legal obligation</li>
+      </ul>
+      <p>Legitimate interests include: </p>
+      <ul>
+        <li>improving our services</li>
+        <li>securing our systems</li>
+        <li>preventing fraud</li>
+        <li>business development activities</li>
+      </ul>
+    </div>
+
+    <div class="policy-section" id="s5">
+      <span class="section-num">// 05</span>
+      <h2>Data Privacy Framework (DPF) Participation</h2>
+      <p>CrowsNest Systems, Inc. complies with the EU-U.S. Data Privacy Framework (EU-U.S. DPF) and the Swiss-U.S. Data Privacy Framework (Swiss-U.S. DPF) as set forth by the U.S. Department of Commerce. CrowsNest Systems, Inc. has certified to the U.S. Department of Commerce that it adheres to the EU-U.S. Data Privacy Framework Principles (EU-U.S. DPF Principles) and the Swiss-U.S. Data Privacy Framework Principles (Swiss-U.S. DPF Principles) with regard to the processing of personal data received from the European Union and Switzerland in reliance on the EU-U.S. DPF and the Swiss-U.S. DPF. </p>
+      <p>If there is any conflict between the terms in this Privacy Policy and the EU-U.S. DPF Principles and/or the Swiss-U.S. DPF Principles, the applicable Principles shall govern. </p>
+      <p>CrowsNest Systems, Inc. is subject to the investigatory and enforcement powers of the U.S. Federal Trade Commission (FTC).</p>
+      <p>CrowsNest currently relies on the EU-U.S. DPF and Swiss-U.S. DPF for personal data other than human resources data. CrowsNest does not rely on the DPF for human resources data transferred in the context of the employment relationship. </p>
+      <p>In accordance with the DPF Principles: </p>
+      <ul>
+        <li>We provide individuals with the opportunity to access personal data about them. </li>
+        <li>We will take reasonable steps to correct, amend, or delete personal data that is inaccurate or processed in violation of the DPF Principles. </li>
+        <li>We remain responsible and liable under the DPF Principles if third parties that we engage to process personal data on our behalf do so in a manner inconsistent with the Principles, unless we prove we are not responsible for the event giving rise to the damage. </li>
+      </ul>
+      <p>For more information about the Data Privacy Framework program, please visit: <a target="_blank" rel="noopener noreferrer" href="https://www.dataprivacyframework.gov/ ">https://www.dataprivacyframework.gov/  </a></p>
+    </div>
+
+    <div class="policy-section" id="s6">
+      <span class="section-num">// 06</span>
+      <h2>International Data Transfers</h2>
+      <p>CrowsNest is headquartered in the United States. Personal data may be transferred to and processed in:</p>
+      <ul>
+        <li>the United States</li>
+        <li>the European Union</li>
+        <li>other jurisdictions where our subprocessors operate</li>
+      </ul> 
+      <p>We ensure lawful transfer mechanisms through: </p>
+      <ul>
+        <li>Data Privacy Framework certification</li>
+        <li>Standard Contractual Clauses (SCCs) where required</li>
+        <li>Contractual Data Processing Agreements</li>
+      </ul>
+    </div>
+
+    <div class="policy-section" id="s7">
+      <span class="section-num">// 07</span>
+      <h2>Data Sharing & Onward Transfers</h2>
+      <p>We may share personal data with: </p>
+      <ul>
+        <li>cloud infrastructure providers</li>
+        <li>hosting providers</li>
+        <li>security service providers</li>
+        <li>analytics providers</li>
+        <li>payment processors</li>
+        <li>professional advisors (legal, accounting)</li>
+      </ul>
+      <p>All subprocessors: </p>
+      <ul>
+        <li>are bound by written agreements</li>
+        <li>must implement appropriate security safeguards</li>
+        <li>must only process data consistent with our obligations</li>
+      </ul>
+      <p>We remain liable under the DPF Principles for onward transfers. We do not sell personal data.</p>
+    </div>
+
+    <div class="policy-section" id="s8">
+      <span class="section-num">// 08</span>
+      <h2>Data Security</h2>
+      <p>We implement appropriate technical and organizational measures, including:</p>
+      <ul>
+        <li>Encryption in transit (TLS 1.2+ / 1.3)</li>
+        <li>Encryption at rest (where applicable)</li>
+        <li>Access controls and RBAC</li>
+        <li>Audit logging</li>
+        <li>Secure software development lifecycle (SDLC)</li>
+        <li>Vulnerability management</li>
+        <li>Incident response procedures</li>
+      </ul>
+      <p>Security controls are regularly reviewed and tested.</p>
+    </div>
+
+    <div class="policy-section" id="s9">
+      <span class="section-num">// 09</span>
+      <h2>Data Retention</h2>
+      <p>We retain personal data only as long as necessary for: </p>
+      <ul>
+        <li>contractual obligations</li>
+        <li>legal requirements</li>
+        <li>legitimate business purposes</li>
+      </ul>
+      <p>When data is no longer required, it is securely deleted or anonymized.</p>
+      <p>Processor data is retained in accordance with customer instructions.</p>
+    </div>
+
+    <div class="policy-section" id="s10">
+      <span class="section-num">// 10</span>
+      <h2>Individual Rights (GDPR)</h2>
+      <p>If you are located in the EU/EEA, you have the right to: </p>
+      <ul>
+        <li>access your personal data</li>
+        <li>rectify inaccurate data ("right to be forgotten")</li>
+        <li>erase data</li>
+        <li>restrict processing</li>
+        <li>data portability</li>
+        <li>object to processing</li>
+        <li>withdraw consent</li>
+      </ul>
+      <p>Requests may be submitted to: <a href="mailto:privacy@crowsnestsecurity.com">privacy@crowsnestsecurity.com</a></p>
+      <p>If unsatisfied, you may lodge a complaint with your local supervisory authority. Individuals whose personal data is transferred to the United States in reliance on the EU-U.S. DPF or Swiss-U.S. DPF also have the right to access, correct, amend, or delete that data where inaccurate or processed in violation of the DPF Principles.</p>
+    </div>
+
+    <div class="policy-section" id="s11">
+      <span class="section-num">// 11</span>
+      <h2>Disclosures Required by Law</h2>
+      <p>CrowsNest Systems, Inc. may be required to disclose personal information in response to lawful requests by public authorities, including to meet national security or law enforcement requirements. </p>
+      <p>We will only disclose personal information where required to do so by applicable law, regulation, subpoena, court order, or other valid legal process. Where legally permitted, we will take reasonable steps to notify the affected individual prior to such disclosure. </p>
+      <p>CrowsNest will assess each request to ensure that any disclosure is legally required and proportionate, and we will not disclose personal information in response to informal or non-binding requests. </p>
+    </div>
+
+    <div class="policy-section" id="s12">
+      <span class="section-num">// 12</span>
+      <h2>Dispute Resolution</h2>
+      <p>In compliance with the EU-U.S. DPF and the Swiss-U.S. DPF, CrowsNest Systems, Inc. commits to resolve complaints about our collection or use of personal data transferred in reliance on the DPF. </p>
+      <p>Individuals with inquiries or complaints should first contact us at: <a href="mailto:privacy@crowsnestsecurity.com">privacy@crowsnestsecurity.com</a></p>
+      <p>If a complaint cannot be resolved through our internal process, CrowsNest Systems, Inc. has agreed to participate in the independent dispute resolution procedures provided by: </p>
+      <h3>JAMS</h3>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://www.jamsadr.com/DPF-Dispute-Resolution">https://www.jamsadr.com/DPF-Dispute-Resolution</a></p>
+      <p>The services of JAMS are provided free of charge to individuals for the purpose of resolving DPF-related complaints.</p>
+      <p>Under certain conditions, individuals may invoke binding arbitration to address residual complaints not resolved by other mechanisms.</p>
+    </div>
+
+    <div class="policy-section" id="s13">
+      <span class="section-num">// 13</span>
+      <h2>Choice</h2>
+      <p>CrowsNest Systems, Inc. provides individuals with the opportunity to choose (opt out) whether their personal data is: </p>
+      <ul>
+        <li>1. disclosed to a third party not acting as an agent on our behalf, or</li>
+        <li>2. used for a purpose that is materially different from the purpose(s) for which it was originally collected or subsequently authorized by the individual. </li>
+        </ol>
+      </ul>  </p>
+      <p>Individuals may exercise this choice at any time by contacting us at:</p>
+      <p><a href="mailto:privacy@crowsnestsecurity.com">privacy@crowsnestsecurity.com</a>. </p>
+      <p>CrowsNest will provide individuals with clear, conspicuous, and readily available mechanisms to exercise their opt-out rights. Opt-out requests will be honored prior to any onward disclosure of personal data to a non-agent third party or prior to use of the data for a materially different purpose.</p>
+      <p>>We do not sell personal data.</p>
+    </div>
+
+    <div class="policy-section" id="s14">
+      <span class="section-num">// 14</span>
+      <h2>Cookies and Tracking Technologies</h2>
+      <p>We use cookies and similar technologies for: </p>
+      <ul>
+        <li>essential website functionality</li>
+        <li>security</li>
+        <li>analytics</li>
+        <li>performance monitoring</li>
+      </ul>
+      <p>Users may manage cookie preferences through browser settings. Where required by law, we obtain consent before deploying non-essential cookies.</p>
+    </div>
+
+    <div class="policy-section" id="s15">
+      <span class="section-num">// 15</span>
+      <h2>Children's Data</h2>
+      <p>Our services are directed to enterprises and not to individuals under 16. We do not knowingly collect personal data from children.</p>
+    </div>
+
+    <div class="policy-section" id="s16">
+      <span class="section-num">// 16</span>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy periodically. Material changes will be: </p>
+      <ul>
+        <li>posted on our website</li>
+        <li>communicated to customers where required</li>
+      </ul>
+    </div>
+
+    <div class="policy-section" id="s17">
+      <span class="section-num">// 17</span>
+      <h2>Contact Information</h2>
+      <div class="contact-card">
+        <h4>CrowsNest Systems, Inc.</h4>
+        <p>131 Continental Dr, Suite 305<br>Newark, DE 19713, US</p>
+        <p>Email: <a href="mailto:privacy@crowsnestsecurity.com">privacy@crowsnestsecurity.com</a></p>
+        <p>Website: <a href="https://www.crowsnestsecurity.com">www.crowsnestsecurity.com</a></p>
+      </div>
+      <div class="contact-card" style="margin-top:16px">
+        <h4>EU Representative</h4>
+        <p>Robert Erenberg-Andersen</p>
+        <p>Email: <a href="mailto:robert@crowsnestsecurity.com">robert@crowsnestsecurity.com</a></p>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<footer>
+  <div class="footer-logo"><a href="index.html" style="display:flex;align-items:center;text-decoration:none;"><svg width="120" height="50" viewBox="0 0 288 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#fff;stroke-width:0px;}</style></defs><path class="cls-1" d="M127.2,19.9c1.7-1.1,3.3-2.4,4.8-4.3,0,0,0,0,0,0-4.6,1-8.4,3.4-12.6,4.8,0,0,0,0,0,0,1.9-1.6,4.1-2.9,6-4.5,2-1.6,4.2-3.1,5.2-6.2,0,0,0,0,0,0-6.6,3.1-11.6,8-17.8,10.8,0,0,0,0,0,0,3.9-4.1,10-6.2,11.5-12.6,0,0,0,0,0,0-5.5,4.5-11.1,9-16.6,13.5,0,0,0,0,0,0,1.2-2.2,5.2-7.5,5.1-10.4t0,0c-1.4,2.5-3,4.7-3.8,5.6-2.4,2.8-4.9,5.6-7.8,7.9-4.4,3.5-8.3,7.4-13.7,9.8-4.4,2-8.2,5.6-11.1,9.9-.7,1-1.3,2.2-1.7,3.4-.9,3.5-1.7,7.1-2.4,10.6-.7,3.5,0,4.7,3.1,6.5.6.4,1.1.9.9,1.7-.3,1.2-.8,2.2-1.9,2.9-.9.5-1.1-.4-1.6-.8-1.1-1.1-2.8-1.7-4.6-1.7-1.7,0-3.5.6-4.6,1.7-.4.4-.7,1.3-1.6.8-1.1-.7-1.6-1.7-1.9-2.9-.2-.8.2-1.3.9-1.7,3.1-1.9,3.7-3.1,3-6.5-.7-3.6-1.5-7.1-2.4-10.6-.3-1.2-1-2.3-1.7-3.4-2.8-4.2-6.7-7.9-11.1-9.9-5.4-2.4-9.3-6.4-13.7-9.8-2.9-2.3-5.4-5.1-7.8-7.9-.8-1-2.4-3.1-3.8-5.6t0,0c0,2.8,4,8.1,5.1,10.4,0,0,0,0,0,0-5.5-4.5-11.1-9-16.6-13.5,0,0,0,0,0,0,1.5,6.4,7.6,8.4,11.5,12.6,0,0,0,0,0,0-6.2-2.8-11.2-7.7-17.8-10.9,0,0,0,0,0,0,1,3.1,3.2,4.6,5.2,6.2,1.9,1.5,4.1,2.9,6,4.5,0,0,0,0,0,0-4.1-1.4-7.9-3.7-12.6-4.8,0,0,0,0,0,0,1.5,1.9,3.1,3.2,4.8,4.3,1.7,1,3.4,1.9,5.1,2.9,0,0,0,0,0,0-3.1-.6-5.8-2.5-9.4-2.5,0,0,0,0,0,0,3.2,3.6,7.3,5.1,11.2,7,0,0,0,0,0,0-2.3-.6-4.7-1.2-7.5-1.9,0,0,0,0,0,0,2.8,3.8,6.4,5.1,10.7,6.5,0,0,0,0,0,0-1.1.2-1.6.5-1.7.9,0,.3.2.6.8,1.1,2.2,1.9,3.9,1.9,4.2,3.1.1.6.2.7,0,1.4-.3.9,1.3,1.2,2.1,1.7,1,.7,2.5.9,2.1,2.9-.2.9,1,1.2,1.6,1.6,2.6,1.5,5.3,3.1,5.9,6.3.6,3,3.2,5,4.1,7.8.2.5.5,1,.4,1.7,0,.5,0,1.2.2,1.5,1.3,1.3,2.8,2.3,2.9,4.6,0,.9,1.7.7,2.6.7.9,0,1.9.2,1.5,1.3-1.1,2.9.7,2.8,2.6,2.7,0,0,0,0,0,0-.1,2.7.4,3.2,3,2.5,1-.2.9.4,1.1.8.4,1.2.7,2.5,1.1,3.7.2.7,1.1.9,1.6.3.4-.5,1.2-.3,1.4.2.2.4.2.8.3,1.3.5,1.9.8,3.9,3.7,1.7,0,0,0,0,0,0-.2,2.2.2,3.7,1.2,5.1.3.5.3.7.3.8,0,.9-1.1,2-1.9,1.9-.4,0-.4-.4-1-.9-1.8-1.7-3.7-2.6-4.8,0,0,0,0,0,0,0,.8-.3,1.5-.4,2-.2.2,0,.3.3.4.4.1.3,0,.7-.5.9-1.2.4-2.3.6-2.6,2.3,0,0,0,0,0,0,.3-.1,3.3-1.6,4.7-.4.3.3.5.7.6.7.6,1.4-.2,3.2-.3,3.1-.1,0,.4-1.8-.9-2.6-1.9-1.2-4.2,2.4-7.8,7-.5.7-1.2,1.7,0,2.8,1.6,1.4,7.6-4.9,7.7-5,0,.2-3.1,4.4-3.8,5.2h0c-.5.7-1.2,1.8-.3,2.7,0,0,.3.3.7.4,1.5.2,2.5-1.2,4.7-3.6,0,0,0,0,0,0-.5,1-1.1,2-1.5,3-.6,1.3-.5,2.5,1.2,2.7,2.6.3,4.8,1.7,7,2.9,1,.6,1.9.9,2.7.9.9,0,1.7-.4,2.7-.9,2.2-1.2,4.4-2.6,7-2.9,1.7-.2,1.8-1.4,1.2-2.7-.4-1-1-2-1.5-3,0,0,0,0,0,0,2.2,2.3,3.2,3.8,4.7,3.6.5,0,.7-.4.7-.4.9-.9.2-1.9-.3-2.7h0c-.7-.8-3.7-5.1-3.8-5.2,0,0,6.1,6.4,7.7,5,1.1-1,.4-2.1,0-2.8-3.6-4.6-5.9-8.2-7.8-7-1.2.8-.8,2.6-.9,2.6s-1-1.8-.3-3.1c0,0,.2-.4.6-.7,1.4-1.2,4.4.3,4.7.4,0,0,0,0,0,0-.2-1.7-1.4-1.9-2.6-2.3-.5-.2-.6-.6-.5-.9,0-.2.2-.3.4-.4.5-.2,1.2,0,2,.2,0,0,0,0,0,0-1.1-2.6-3-1.7-4.8,0-.6.6-.6.9-1,.9-.8.1-1.9-.9-1.9-1.9,0,0,0-.3.3-.8,1.1-1.4,1.5-2.9,1.2-5.1,0,0,0,0,0,0,2.9,2.3,3.2.2,3.7-1.7,0-.4.2-.8.3-1.3.2-.6,1-.7,1.4-.2.5.6,1.4.4,1.6-.3.4-1.2.7-2.5,1.1-3.7.2-.4.1-1,1.1-.8,2.6.7,3.1.2,3-2.5,0,0,0,0,0,0,1.9.2,3.7.2,2.6-2.7-.4-1.2.6-1.3,1.5-1.3.9,0,2.6.2,2.6-.7,0-2.3,1.6-3.3,2.9-4.6.3-.3.3-1,.2-1.5-.1-.7.2-1.1.4-1.7.9-2.9,3.5-4.8,4.1-7.8.7-3.2,3.4-4.8,5.9-6.3.7-.4,1.8-.7,1.6-1.6-.4-1.9,1.1-2.2,2.1-2.9.8-.5,2.4-.9,2.1-1.7-.2-.7-.2-.8,0-1.4.3-1.2,2-1.2,4.2-3.1.6-.5.8-.8.8-1.1,0-.4-.7-.7-1.7-.9,0,0,0,0,0,0,4.3-1.4,7.9-2.7,10.7-6.5,0,0,0,0,0,0-2.8.7-5.2,1.3-7.5,1.9,0,0,0,0,0,0,3.9-1.9,7.9-3.4,11.2-7,0,0,0,0,0,0-3.6,0-6.4,1.9-9.4,2.5,0,0,0,0,0,0,1.7-1,3.5-1.9,5.1-2.9ZM69.5,78.6c-.5,1.6-.9,3.3-1.5,5.2-.5-1.9-1-3.6-1.5-5.2-.3-.9,0-1.6.7-2.1.2-.2.5-.3.8-.4.3,0,.5.2.8.4.8.5,1,1.2.7,2.1Z"/><g><path class="cls-1" d="M131.2,68.6h10.1v2.9h-10.1c-2,0-3.7-.7-5.1-2.1-1.4-1.4-2.1-3.1-2.1-5.1s.7-3.7,2.1-5.1,3.1-2.1,5.1-2.1h6.9v2.9h-6.9c-1.2,0-2.2.4-3.1,1.3-.8.8-1.3,1.9-1.3,3.1s.4,2.2,1.3,3.1c.9.8,1.9,1.3,3.1,1.3Z"/><path class="cls-1" d="M143.5,71.5h-2.9v-14.5h10.1c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.9.8-1.9,1.3-3.1,1.3h-.6l6.4,11.6h-3.3l-8-14.5h5.4c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-7.2v11.6Z"/><path class="cls-1" d="M163.3,71.5c-2,0-3.7-.7-5.1-2.1s-2.1-3.1-2.1-5.1.7-3.7,2.1-5.1c1.4-1.4,3.1-2.1,5.1-2.1s3.7.7,5.1,2.1,2.1,3.1,2.1,5.1-.7,3.7-2.1,5.1c-1.4,1.4-3.1,2.1-5.1,2.1ZM163.3,68.6c1.2,0,2.2-.4,3.1-1.3.9-.8,1.3-1.9,1.3-3.1s-.4-2.2-1.3-3.1c-.9-.8-1.9-1.3-3.1-1.3s-2.2.4-3.1,1.3c-.9.8-1.3,1.9-1.3,3.1s.4,2.2,1.3,3.1c.8.8,1.9,1.3,3.1,1.3Z"/><path class="cls-1" d="M181.1,63.1l-4.4,9.1-7.2-15.2h3.3l4,8.3,2.7-5.7,1.6-3.4,1.6,3.4,2.7,5.7,4-8.3h3.3l-7.2,15.2-4.4-9.1Z"/><path class="cls-1" d="M206.4,71.5h-18.1l1.4-2.9h16.7c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-5.8c-1.2,0-2.2-.4-3.1-1.3-.9-.8-1.3-1.9-1.3-3.1s.4-2.2,1.3-3.1c.9-.8,1.9-1.3,3.1-1.3h9.4v2.9h-9.4c-.4,0-.8.1-1,.4s-.4.6-.4,1,.1.8.4,1,.6.4,1,.4h5.8c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.9.8-1.9,1.3-3.1,1.3Z"/><path class="cls-1" d="M215.2,61.4v10.1h-2.9v-14.5h2.9l8.7,10.2v-10.2h2.9v14.5h-2.9l-8.7-10.1Z"/><path class="cls-1" d="M244.1,57l-1.4,2.9h-10.1v8.7h15.9l-1.4,2.9h-17.4v-14.5h14.5ZM249.9,65.7h-14.5v-2.9h15.9l-1.4,2.9Z"/><path class="cls-1" d="M264.7,71.5h-18.1l1.4-2.9h16.7c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-5.8c-1.2,0-2.2-.4-3.1-1.3-.9-.8-1.3-1.9-1.3-3.1s.4-2.2,1.3-3.1c.8-.8,1.9-1.3,3.1-1.3h9.4v2.9h-9.4c-.4,0-.8.1-1,.4s-.4.6-.4,1,.1.8.4,1,.6.4,1,.4h5.8c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.8.8-1.9,1.3-3.1,1.3Z"/><path class="cls-1" d="M278.2,59.9v17.4h-2.9v-17.4h-7.2v-2.9h16v2.9h-5.8Z"/></g></svg></a></div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="demo.html">Request a Demo</a>
+  </div>
+  <span class="footer-copy">© 2026 CrowsNest Systems, Inc. </span>
+</footer>
+
+</body>
+</html>

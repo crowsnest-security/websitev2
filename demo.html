@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Demo — CrowsNest Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   :root {
+      --black:        #060A10;
+      --navy:         #0A0F1A;
+      --navy-2:       #0D1520;
+      --border:       rgba(255,255,255,0.08);
+      --border-cyan:  rgba(0,188,212,0.3);
+      --white:        #FFFFFF;
+      --muted:        #6B7A8D;
+      --muted-light:  #8C9BAA;
+      --cyan:         #00BCD4;
+      --cyan-dim:     rgba(0,188,212,0.12);
+      --light-bg:     #F8F9FB;
+      --light-border: #E5E8ED;
+      --light-text:   #1A2232;
+      --light-muted:  #5A6675;
+      --font-display: 'Noto Sans', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+      --font-mono:    'IBM Plex Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px; line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(6,10,16,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo svg { display: block; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--cyan); border: 1px solid var(--cyan);
+      border-radius: 4px; padding: 10px 22px; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--cyan); color: var(--navy); }
+
+    /* MAIN */
+    main {
+      flex: 1;
+      padding: 140px 60px 80px;
+      max-width: 1200px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+
+    /* LEFT — COPY */
+    .demo-left { position: sticky; top: 140px; }
+    .eyebrow {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan);
+      margin-bottom: 20px; display: block;
+    }
+    .demo-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4.5vw, 58px);
+      font-weight: 800; line-height: 1.05;
+      letter-spacing: -0.025em; margin-bottom: 24px;
+    }
+    .demo-h1 em { font-style: normal; color: var(--cyan); }
+    .demo-desc {
+      font-size: 16px; font-weight: 300; color: var(--muted-light);
+      line-height: 1.8; margin-bottom: 48px; max-width: 440px;
+    }
+    .what-to-expect { display: flex; flex-direction: column; gap: 20px; }
+    .expect-item { display: flex; gap: 16px; align-items: flex-start; }
+    .expect-num {
+      font-family: var(--font-mono); font-size: 10px; color: var(--cyan);
+      letter-spacing: 0.1em; margin-top: 3px; flex-shrink: 0;
+      width: 24px;
+    }
+    .expect-item h4 {
+      font-family: var(--font-display); font-size: 14px; font-weight: 600;
+      margin-bottom: 3px;
+    }
+    .expect-item p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* RIGHT — FORM */
+    .demo-form-wrap {
+      background: var(--navy-2);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 48px 44px;
+      position: relative; overflow: hidden;
+    }
+    .demo-form-wrap::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    }
+    .form-title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 700;
+      margin-bottom: 8px; letter-spacing: -0.01em;
+    }
+    .form-subtitle {
+      font-size: 13px; color: var(--muted); margin-bottom: 36px;
+      font-family: var(--font-mono); letter-spacing: 0.03em;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .form-group label {
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 6px; padding: 12px 16px;
+      color: var(--white); font-family: var(--font-body);
+      font-size: 14px; font-weight: 300;
+      outline: none; transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+    .form-group select { appearance: none; cursor: pointer; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--muted); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--border-cyan);
+      background: rgba(0,188,212,0.04);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group select option { background: var(--navy-2); color: var(--white); }
+    .form-submit {
+      width: 100%;
+      font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--navy); background: var(--cyan);
+      border: none; border-radius: 6px; padding: 16px 24px;
+      cursor: pointer; margin-top: 8px;
+      transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .form-submit:hover {
+      opacity: 0.9; transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(0,188,212,0.28);
+    }
+    .form-note {
+      font-family: var(--font-mono); font-size: 10px; color: var(--muted);
+      text-align: center; margin-top: 16px; letter-spacing: 0.04em;
+    }
+
+    /* SUCCESS STATE */
+    .form-success {
+      display: none; text-align: center; padding: 40px 20px;
+    }
+    .success-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--cyan-dim); border: 2px solid var(--border-cyan);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px; color: var(--cyan);
+    }
+    .form-success h3 {
+      font-family: var(--font-display); font-size: 24px; font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .form-success p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* FOOTER */
+    footer {
+      background: var(--black); border-top: 1px solid var(--border);
+      padding: 36px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo { display: flex; align-items: center; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-family: var(--font-mono); font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-family: var(--font-mono); font-size: 10px; color: #2A3545; }
+
+    /* GRID BG */
+    .page-bg {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(0,188,212,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,188,212,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 70% 60% at 20% 30%, black 20%, transparent 80%);
+    }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    main > * { animation: fadeUp 0.5s ease both; }
+    .demo-form-wrap { animation-delay: 0.1s; }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; } .nav-links { display: none; }
+      main { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 48px; }
+      .demo-left { position: static; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-bg"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="120" height="50" viewBox="0 0 288 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#fff;stroke-width:0px;}</style></defs><path class="cls-1" d="M127.2,19.9c1.7-1.1,3.3-2.4,4.8-4.3,0,0,0,0,0,0-4.6,1-8.4,3.4-12.6,4.8,0,0,0,0,0,0,1.9-1.6,4.1-2.9,6-4.5,2-1.6,4.2-3.1,5.2-6.2,0,0,0,0,0,0-6.6,3.1-11.6,8-17.8,10.8,0,0,0,0,0,0,3.9-4.1,10-6.2,11.5-12.6,0,0,0,0,0,0-5.5,4.5-11.1,9-16.6,13.5,0,0,0,0,0,0,1.2-2.2,5.2-7.5,5.1-10.4t0,0c-1.4,2.5-3,4.7-3.8,5.6-2.4,2.8-4.9,5.6-7.8,7.9-4.4,3.5-8.3,7.4-13.7,9.8-4.4,2-8.2,5.6-11.1,9.9-.7,1-1.3,2.2-1.7,3.4-.9,3.5-1.7,7.1-2.4,10.6-.7,3.5,0,4.7,3.1,6.5.6.4,1.1.9.9,1.7-.3,1.2-.8,2.2-1.9,2.9-.9.5-1.1-.4-1.6-.8-1.1-1.1-2.8-1.7-4.6-1.7-1.7,0-3.5.6-4.6,1.7-.4.4-.7,1.3-1.6.8-1.1-.7-1.6-1.7-1.9-2.9-.2-.8.2-1.3.9-1.7,3.1-1.9,3.7-3.1,3-6.5-.7-3.6-1.5-7.1-2.4-10.6-.3-1.2-1-2.3-1.7-3.4-2.8-4.2-6.7-7.9-11.1-9.9-5.4-2.4-9.3-6.4-13.7-9.8-2.9-2.3-5.4-5.1-7.8-7.9-.8-1-2.4-3.1-3.8-5.6t0,0c0,2.8,4,8.1,5.1,10.4,0,0,0,0,0,0-5.5-4.5-11.1-9-16.6-13.5,0,0,0,0,0,0,1.5,6.4,7.6,8.4,11.5,12.6,0,0,0,0,0,0-6.2-2.8-11.2-7.7-17.8-10.9,0,0,0,0,0,0,1,3.1,3.2,4.6,5.2,6.2,1.9,1.5,4.1,2.9,6,4.5,0,0,0,0,0,0-4.1-1.4-7.9-3.7-12.6-4.8,0,0,0,0,0,0,1.5,1.9,3.1,3.2,4.8,4.3,1.7,1,3.4,1.9,5.1,2.9,0,0,0,0,0,0-3.1-.6-5.8-2.5-9.4-2.5,0,0,0,0,0,0,3.2,3.6,7.3,5.1,11.2,7,0,0,0,0,0,0-2.3-.6-4.7-1.2-7.5-1.9,0,0,0,0,0,0,2.8,3.8,6.4,5.1,10.7,6.5,0,0,0,0,0,0-1.1.2-1.6.5-1.7.9,0,.3.2.6.8,1.1,2.2,1.9,3.9,1.9,4.2,3.1.1.6.2.7,0,1.4-.3.9,1.3,1.2,2.1,1.7,1,.7,2.5.9,2.1,2.9-.2.9,1,1.2,1.6,1.6,2.6,1.5,5.3,3.1,5.9,6.3.6,3,3.2,5,4.1,7.8.2.5.5,1,.4,1.7,0,.5,0,1.2.2,1.5,1.3,1.3,2.8,2.3,2.9,4.6,0,.9,1.7.7,2.6.7.9,0,1.9.2,1.5,1.3-1.1,2.9.7,2.8,2.6,2.7,0,0,0,0,0,0-.1,2.7.4,3.2,3,2.5,1-.2.9.4,1.1.8.4,1.2.7,2.5,1.1,3.7.2.7,1.1.9,1.6.3.4-.5,1.2-.3,1.4.2.2.4.2.8.3,1.3.5,1.9.8,3.9,3.7,1.7,0,0,0,0,0,0-.2,2.2.2,3.7,1.2,5.1.3.5.3.7.3.8,0,.9-1.1,2-1.9,1.9-.4,0-.4-.4-1-.9-1.8-1.7-3.7-2.6-4.8,0,0,0,0,0,0,0,.8-.3,1.5-.4,2-.2.2,0,.3.3.4.4.1.3,0,.7-.5.9-1.2.4-2.3.6-2.6,2.3,0,0,0,0,0,0,.3-.1,3.3-1.6,4.7-.4.3.3.5.7.6.7.6,1.4-.2,3.2-.3,3.1-.1,0,.4-1.8-.9-2.6-1.9-1.2-4.2,2.4-7.8,7-.5.7-1.2,1.7,0,2.8,1.6,1.4,7.6-4.9,7.7-5,0,.2-3.1,4.4-3.8,5.2h0c-.5.7-1.2,1.8-.3,2.7,0,0,.3.3.7.4,1.5.2,2.5-1.2,4.7-3.6,0,0,0,0,0,0-.5,1-1.1,2-1.5,3-.6,1.3-.5,2.5,1.2,2.7,2.6.3,4.8,1.7,7,2.9,1,.6,1.9.9,2.7.9.9,0,1.7-.4,2.7-.9,2.2-1.2,4.4-2.6,7-2.9,1.7-.2,1.8-1.4,1.2-2.7-.4-1-1-2-1.5-3,0,0,0,0,0,0,2.2,2.3,3.2,3.8,4.7,3.6.5,0,.7-.4.7-.4.9-.9.2-1.9-.3-2.7h0c-.7-.8-3.7-5.1-3.8-5.2,0,0,6.1,6.4,7.7,5,1.1-1,.4-2.1,0-2.8-3.6-4.6-5.9-8.2-7.8-7-1.2.8-.8,2.6-.9,2.6s-1-1.8-.3-3.1c0,0,.2-.4.6-.7,1.4-1.2,4.4.3,4.7.4,0,0,0,0,0,0-.2-1.7-1.4-1.9-2.6-2.3-.5-.2-.6-.6-.5-.9,0-.2.2-.3.4-.4.5-.2,1.2,0,2,.2,0,0,0,0,0,0-1.1-2.6-3-1.7-4.8,0-.6.6-.6.9-1,.9-.8.1-1.9-.9-1.9-1.9,0,0,0-.3.3-.8,1.1-1.4,1.5-2.9,1.2-5.1,0,0,0,0,0,0,2.9,2.3,3.2.2,3.7-1.7,0-.4.2-.8.3-1.3.2-.6,1-.7,1.4-.2.5.6,1.4.4,1.6-.3.4-1.2.7-2.5,1.1-3.7.2-.4.1-1,1.1-.8,2.6.7,3.1.2,3-2.5,0,0,0,0,0,0,1.9.2,3.7.2,2.6-2.7-.4-1.2.6-1.3,1.5-1.3.9,0,2.6.2,2.6-.7,0-2.3,1.6-3.3,2.9-4.6.3-.3.3-1,.2-1.5-.1-.7.2-1.1.4-1.7.9-2.9,3.5-4.8,4.1-7.8.7-3.2,3.4-4.8,5.9-6.3.7-.4,1.8-.7,1.6-1.6-.4-1.9,1.1-2.2,2.1-2.9.8-.5,2.4-.9,2.1-1.7-.2-.7-.2-.8,0-1.4.3-1.2,2-1.2,4.2-3.1.6-.5.8-.8.8-1.1,0-.4-.7-.7-1.7-.9,0,0,0,0,0,0,4.3-1.4,7.9-2.7,10.7-6.5,0,0,0,0,0,0-2.8.7-5.2,1.3-7.5,1.9,0,0,0,0,0,0,3.9-1.9,7.9-3.4,11.2-7,0,0,0,0,0,0-3.6,0-6.4,1.9-9.4,2.5,0,0,0,0,0,0,1.7-1,3.5-1.9,5.1-2.9ZM69.5,78.6c-.5,1.6-.9,3.3-1.5,5.2-.5-1.9-1-3.6-1.5-5.2-.3-.9,0-1.6.7-2.1.2-.2.5-.3.8-.4.3,0,.5.2.8.4.8.5,1,1.2.7,2.1Z"/><g><path class="cls-1" d="M131.2,68.6h10.1v2.9h-10.1c-2,0-3.7-.7-5.1-2.1-1.4-1.4-2.1-3.1-2.1-5.1s.7-3.7,2.1-5.1,3.1-2.1,5.1-2.1h6.9v2.9h-6.9c-1.2,0-2.2.4-3.1,1.3-.8.8-1.3,1.9-1.3,3.1s.4,2.2,1.3,3.1c.9.8,1.9,1.3,3.1,1.3Z"/><path class="cls-1" d="M143.5,71.5h-2.9v-14.5h10.1c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.9.8-1.9,1.3-3.1,1.3h-.6l6.4,11.6h-3.3l-8-14.5h5.4c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-7.2v11.6Z"/><path class="cls-1" d="M163.3,71.5c-2,0-3.7-.7-5.1-2.1s-2.1-3.1-2.1-5.1.7-3.7,2.1-5.1c1.4-1.4,3.1-2.1,5.1-2.1s3.7.7,5.1,2.1,2.1,3.1,2.1,5.1-.7,3.7-2.1,5.1c-1.4,1.4-3.1,2.1-5.1,2.1ZM163.3,68.6c1.2,0,2.2-.4,3.1-1.3.9-.8,1.3-1.9,1.3-3.1s-.4-2.2-1.3-3.1c-.9-.8-1.9-1.3-3.1-1.3s-2.2.4-3.1,1.3c-.9.8-1.3,1.9-1.3,3.1s.4,2.2,1.3,3.1c.8.8,1.9,1.3,3.1,1.3Z"/><path class="cls-1" d="M181.1,63.1l-4.4,9.1-7.2-15.2h3.3l4,8.3,2.7-5.7,1.6-3.4,1.6,3.4,2.7,5.7,4-8.3h3.3l-7.2,15.2-4.4-9.1Z"/><path class="cls-1" d="M206.4,71.5h-18.1l1.4-2.9h16.7c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-5.8c-1.2,0-2.2-.4-3.1-1.3-.9-.8-1.3-1.9-1.3-3.1s.4-2.2,1.3-3.1c.9-.8,1.9-1.3,3.1-1.3h9.4v2.9h-9.4c-.4,0-.8.1-1,.4s-.4.6-.4,1,.1.8.4,1,.6.4,1,.4h5.8c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.9.8-1.9,1.3-3.1,1.3Z"/><path class="cls-1" d="M215.2,61.4v10.1h-2.9v-14.5h2.9l8.7,10.2v-10.2h2.9v14.5h-2.9l-8.7-10.1Z"/><path class="cls-1" d="M244.1,57l-1.4,2.9h-10.1v8.7h15.9l-1.4,2.9h-17.4v-14.5h14.5ZM249.9,65.7h-14.5v-2.9h15.9l-1.4,2.9Z"/><path class="cls-1" d="M264.7,71.5h-18.1l1.4-2.9h16.7c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-5.8c-1.2,0-2.2-.4-3.1-1.3-.9-.8-1.3-1.9-1.3-3.1s.4-2.2,1.3-3.1c.8-.8,1.9-1.3,3.1-1.3h9.4v2.9h-9.4c-.4,0-.8.1-1,.4s-.4.6-.4,1,.1.8.4,1,.6.4,1,.4h5.8c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.8.8-1.9,1.3-3.1,1.3Z"/><path class="cls-1" d="M278.2,59.9v17.4h-2.9v-17.4h-7.2v-2.9h16v2.9h-5.8Z"/></g></svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#problem">Problem</a></li>
+    <li><a href="index.html#solution">Solution</a></li>
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#team">Team</a></li>
+  </ul>
+  <a href="demo.html" class="nav-cta" style="background:var(--cyan);color:var(--navy);">Request a Demo</a>
+</nav>
+
+<main>
+  <div class="demo-left">
+    <span class="eyebrow">GET STARTED</span>
+    <h1 class="demo-h1">See CrowsNest in your <em>environment</em></h1>
+    <p class="demo-desc">In a 30-minute session, our team will walk you through how CrowsNest maps directly to your infrastructure, frameworks, and compliance requirements — with no vendor lock-in.</p>
+    <div class="what-to-expect">
+      <div class="expect-item">
+        <span class="expect-num">01.</span>
+        <div>
+          <h4>Live environment walkthrough</h4>
+          <p>We connect to your real stack and demonstrate continuous validation in action — not a sandbox.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <span class="expect-num">02.</span>
+        <div>
+          <h4>Framework mapping</h4>
+          <p>We show exactly how your existing controls translate into deterministic, executable policy.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <span class="expect-num">03.</span>
+        <div>
+          <h4>Evidence output preview</h4>
+          <p>You'll see the verifiable audit evidence CrowsNest produces — traceable, explainable, repeatable.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <span class="expect-num">04.</span>
+        <div>
+          <h4>No commitment required</h4>
+          <p>This is a technical conversation, not a sales pitch. We'll answer your questions directly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-form-wrap">
+    <div id="formContent">
+      <div class="form-title">Book your demo</div>
+      <div class="form-subtitle">// Typically confirmed within 24 hours</div>
+      <form id="demoForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Work Email *</label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="company">Company *</label>
+          <input type="text" id="company" name="company" placeholder="Acme Corp" required />
+        </div>
+        <div class="form-group">
+          <label for="role">Your Role</label>
+          <select id="role" name="role">
+            <option value="" disabled selected>Select your role</option>
+            <option>CISO / Head of Security</option>
+            <option>CTO / CIO</option>
+            <option>VP / Director of Engineering</option>
+            <option>Security Engineer / Architect</option>
+            <option>Compliance / GRC Lead</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="companySize">Company Size</label>
+          <select id="companySize" name="companySize">
+            <option value="" disabled selected>Select size</option>
+            <option>1–50 employees</option>
+            <option>51–200 employees</option>
+            <option>201–1,000 employees</option>
+            <option>1,001–5,000 employees</option>
+            <option>5,000+ employees</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">What's driving this conversation?</label>
+          <textarea id="message" name="message" placeholder="e.g. upcoming audit, compliance framework, specific security challenge..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          Request Demo
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="form-note">// No spam. No SDR follow-up scripts. Just a direct technical conversation.</p>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14l7 7 11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Request received.</h3>
+      <p>We'll be in touch within 24 hours to confirm your session.<br><br>In the meantime, feel free to reach out directly at <a href="/cdn-cgi/l/email-protection#ed89888082ad8e9f829a9e83889e999e888e989f849994c38e8280" style="color:var(--cyan)"><span class="__cf_email__" data-cfemail="90f4f5fdffd0f3e2ffe7e3fef5e3e4e3f5f3e5e2f9e4e9bef3fffd">[email&#160;protected]</span></a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo"><a href="index.html" style="display:flex;align-items:center;text-decoration:none;"><svg width="120" height="50" viewBox="0 0 288 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:#fff;stroke-width:0px;}</style></defs><path class="cls-1" d="M127.2,19.9c1.7-1.1,3.3-2.4,4.8-4.3,0,0,0,0,0,0-4.6,1-8.4,3.4-12.6,4.8,0,0,0,0,0,0,1.9-1.6,4.1-2.9,6-4.5,2-1.6,4.2-3.1,5.2-6.2,0,0,0,0,0,0-6.6,3.1-11.6,8-17.8,10.8,0,0,0,0,0,0,3.9-4.1,10-6.2,11.5-12.6,0,0,0,0,0,0-5.5,4.5-11.1,9-16.6,13.5,0,0,0,0,0,0,1.2-2.2,5.2-7.5,5.1-10.4t0,0c-1.4,2.5-3,4.7-3.8,5.6-2.4,2.8-4.9,5.6-7.8,7.9-4.4,3.5-8.3,7.4-13.7,9.8-4.4,2-8.2,5.6-11.1,9.9-.7,1-1.3,2.2-1.7,3.4-.9,3.5-1.7,7.1-2.4,10.6-.7,3.5,0,4.7,3.1,6.5.6.4,1.1.9.9,1.7-.3,1.2-.8,2.2-1.9,2.9-.9.5-1.1-.4-1.6-.8-1.1-1.1-2.8-1.7-4.6-1.7-1.7,0-3.5.6-4.6,1.7-.4.4-.7,1.3-1.6.8-1.1-.7-1.6-1.7-1.9-2.9-.2-.8.2-1.3.9-1.7,3.1-1.9,3.7-3.1,3-6.5-.7-3.6-1.5-7.1-2.4-10.6-.3-1.2-1-2.3-1.7-3.4-2.8-4.2-6.7-7.9-11.1-9.9-5.4-2.4-9.3-6.4-13.7-9.8-2.9-2.3-5.4-5.1-7.8-7.9-.8-1-2.4-3.1-3.8-5.6t0,0c0,2.8,4,8.1,5.1,10.4,0,0,0,0,0,0-5.5-4.5-11.1-9-16.6-13.5,0,0,0,0,0,0,1.5,6.4,7.6,8.4,11.5,12.6,0,0,0,0,0,0-6.2-2.8-11.2-7.7-17.8-10.9,0,0,0,0,0,0,1,3.1,3.2,4.6,5.2,6.2,1.9,1.5,4.1,2.9,6,4.5,0,0,0,0,0,0-4.1-1.4-7.9-3.7-12.6-4.8,0,0,0,0,0,0,1.5,1.9,3.1,3.2,4.8,4.3,1.7,1,3.4,1.9,5.1,2.9,0,0,0,0,0,0-3.1-.6-5.8-2.5-9.4-2.5,0,0,0,0,0,0,3.2,3.6,7.3,5.1,11.2,7,0,0,0,0,0,0-2.3-.6-4.7-1.2-7.5-1.9,0,0,0,0,0,0,2.8,3.8,6.4,5.1,10.7,6.5,0,0,0,0,0,0-1.1.2-1.6.5-1.7.9,0,.3.2.6.8,1.1,2.2,1.9,3.9,1.9,4.2,3.1.1.6.2.7,0,1.4-.3.9,1.3,1.2,2.1,1.7,1,.7,2.5.9,2.1,2.9-.2.9,1,1.2,1.6,1.6,2.6,1.5,5.3,3.1,5.9,6.3.6,3,3.2,5,4.1,7.8.2.5.5,1,.4,1.7,0,.5,0,1.2.2,1.5,1.3,1.3,2.8,2.3,2.9,4.6,0,.9,1.7.7,2.6.7.9,0,1.9.2,1.5,1.3-1.1,2.9.7,2.8,2.6,2.7,0,0,0,0,0,0-.1,2.7.4,3.2,3,2.5,1-.2.9.4,1.1.8.4,1.2.7,2.5,1.1,3.7.2.7,1.1.9,1.6.3.4-.5,1.2-.3,1.4.2.2.4.2.8.3,1.3.5,1.9.8,3.9,3.7,1.7,0,0,0,0,0,0-.2,2.2.2,3.7,1.2,5.1.3.5.3.7.3.8,0,.9-1.1,2-1.9,1.9-.4,0-.4-.4-1-.9-1.8-1.7-3.7-2.6-4.8,0,0,0,0,0,0,0,.8-.3,1.5-.4,2-.2.2,0,.3.3.4.4.1.3,0,.7-.5.9-1.2.4-2.3.6-2.6,2.3,0,0,0,0,0,0,.3-.1,3.3-1.6,4.7-.4.3.3.5.7.6.7.6,1.4-.2,3.2-.3,3.1-.1,0,.4-1.8-.9-2.6-1.9-1.2-4.2,2.4-7.8,7-.5.7-1.2,1.7,0,2.8,1.6,1.4,7.6-4.9,7.7-5,0,.2-3.1,4.4-3.8,5.2h0c-.5.7-1.2,1.8-.3,2.7,0,0,.3.3.7.4,1.5.2,2.5-1.2,4.7-3.6,0,0,0,0,0,0-.5,1-1.1,2-1.5,3-.6,1.3-.5,2.5,1.2,2.7,2.6.3,4.8,1.7,7,2.9,1,.6,1.9.9,2.7.9.9,0,1.7-.4,2.7-.9,2.2-1.2,4.4-2.6,7-2.9,1.7-.2,1.8-1.4,1.2-2.7-.4-1-1-2-1.5-3,0,0,0,0,0,0,2.2,2.3,3.2,3.8,4.7,3.6.5,0,.7-.4.7-.4.9-.9.2-1.9-.3-2.7h0c-.7-.8-3.7-5.1-3.8-5.2,0,0,6.1,6.4,7.7,5,1.1-1,.4-2.1,0-2.8-3.6-4.6-5.9-8.2-7.8-7-1.2.8-.8,2.6-.9,2.6s-1-1.8-.3-3.1c0,0,.2-.4.6-.7,1.4-1.2,4.4.3,4.7.4,0,0,0,0,0,0-.2-1.7-1.4-1.9-2.6-2.3-.5-.2-.6-.6-.5-.9,0-.2.2-.3.4-.4.5-.2,1.2,0,2,.2,0,0,0,0,0,0-1.1-2.6-3-1.7-4.8,0-.6.6-.6.9-1,.9-.8.1-1.9-.9-1.9-1.9,0,0,0-.3.3-.8,1.1-1.4,1.5-2.9,1.2-5.1,0,0,0,0,0,0,2.9,2.3,3.2.2,3.7-1.7,0-.4.2-.8.3-1.3.2-.6,1-.7,1.4-.2.5.6,1.4.4,1.6-.3.4-1.2.7-2.5,1.1-3.7.2-.4.1-1,1.1-.8,2.6.7,3.1.2,3-2.5,0,0,0,0,0,0,1.9.2,3.7.2,2.6-2.7-.4-1.2.6-1.3,1.5-1.3.9,0,2.6.2,2.6-.7,0-2.3,1.6-3.3,2.9-4.6.3-.3.3-1,.2-1.5-.1-.7.2-1.1.4-1.7.9-2.9,3.5-4.8,4.1-7.8.7-3.2,3.4-4.8,5.9-6.3.7-.4,1.8-.7,1.6-1.6-.4-1.9,1.1-2.2,2.1-2.9.8-.5,2.4-.9,2.1-1.7-.2-.7-.2-.8,0-1.4.3-1.2,2-1.2,4.2-3.1.6-.5.8-.8.8-1.1,0-.4-.7-.7-1.7-.9,0,0,0,0,0,0,4.3-1.4,7.9-2.7,10.7-6.5,0,0,0,0,0,0-2.8.7-5.2,1.3-7.5,1.9,0,0,0,0,0,0,3.9-1.9,7.9-3.4,11.2-7,0,0,0,0,0,0-3.6,0-6.4,1.9-9.4,2.5,0,0,0,0,0,0,1.7-1,3.5-1.9,5.1-2.9ZM69.5,78.6c-.5,1.6-.9,3.3-1.5,5.2-.5-1.9-1-3.6-1.5-5.2-.3-.9,0-1.6.7-2.1.2-.2.5-.3.8-.4.3,0,.5.2.8.4.8.5,1,1.2.7,2.1Z"/><g><path class="cls-1" d="M131.2,68.6h10.1v2.9h-10.1c-2,0-3.7-.7-5.1-2.1-1.4-1.4-2.1-3.1-2.1-5.1s.7-3.7,2.1-5.1,3.1-2.1,5.1-2.1h6.9v2.9h-6.9c-1.2,0-2.2.4-3.1,1.3-.8.8-1.3,1.9-1.3,3.1s.4,2.2,1.3,3.1c.9.8,1.9,1.3,3.1,1.3Z"/><path class="cls-1" d="M143.5,71.5h-2.9v-14.5h10.1c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.9.8-1.9,1.3-3.1,1.3h-.6l6.4,11.6h-3.3l-8-14.5h5.4c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-7.2v11.6Z"/><path class="cls-1" d="M163.3,71.5c-2,0-3.7-.7-5.1-2.1s-2.1-3.1-2.1-5.1.7-3.7,2.1-5.1c1.4-1.4,3.1-2.1,5.1-2.1s3.7.7,5.1,2.1,2.1,3.1,2.1,5.1-.7,3.7-2.1,5.1c-1.4,1.4-3.1,2.1-5.1,2.1ZM163.3,68.6c1.2,0,2.2-.4,3.1-1.3.9-.8,1.3-1.9,1.3-3.1s-.4-2.2-1.3-3.1c-.9-.8-1.9-1.3-3.1-1.3s-2.2.4-3.1,1.3c-.9.8-1.3,1.9-1.3,3.1s.4,2.2,1.3,3.1c.8.8,1.9,1.3,3.1,1.3Z"/><path class="cls-1" d="M181.1,63.1l-4.4,9.1-7.2-15.2h3.3l4,8.3,2.7-5.7,1.6-3.4,1.6,3.4,2.7,5.7,4-8.3h3.3l-7.2,15.2-4.4-9.1Z"/><path class="cls-1" d="M206.4,71.5h-18.1l1.4-2.9h16.7c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-5.8c-1.2,0-2.2-.4-3.1-1.3-.9-.8-1.3-1.9-1.3-3.1s.4-2.2,1.3-3.1c.9-.8,1.9-1.3,3.1-1.3h9.4v2.9h-9.4c-.4,0-.8.1-1,.4s-.4.6-.4,1,.1.8.4,1,.6.4,1,.4h5.8c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.9.8-1.9,1.3-3.1,1.3Z"/><path class="cls-1" d="M215.2,61.4v10.1h-2.9v-14.5h2.9l8.7,10.2v-10.2h2.9v14.5h-2.9l-8.7-10.1Z"/><path class="cls-1" d="M244.1,57l-1.4,2.9h-10.1v8.7h15.9l-1.4,2.9h-17.4v-14.5h14.5ZM249.9,65.7h-14.5v-2.9h15.9l-1.4,2.9Z"/><path class="cls-1" d="M264.7,71.5h-18.1l1.4-2.9h16.7c.4,0,.8-.1,1-.4s.4-.6.4-1-.1-.8-.4-1-.6-.4-1-.4h-5.8c-1.2,0-2.2-.4-3.1-1.3-.9-.8-1.3-1.9-1.3-3.1s.4-2.2,1.3-3.1c.8-.8,1.9-1.3,3.1-1.3h9.4v2.9h-9.4c-.4,0-.8.1-1,.4s-.4.6-.4,1,.1.8.4,1,.6.4,1,.4h5.8c1.2,0,2.2.4,3.1,1.3.9.8,1.3,1.9,1.3,3.1s-.4,2.2-1.3,3.1c-.8.8-1.9,1.3-3.1,1.3Z"/><path class="cls-1" d="M278.2,59.9v17.4h-2.9v-17.4h-7.2v-2.9h16v2.9h-5.8Z"/></g></svg></a></div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="demo.html">Contact</a>
+  </div>
+  <span class="footer-copy">© 2026 CrowsNest Systems, Inc. </span>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script>
+  document.getElementById('demoForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = new FormData(this);
+    const body = [
+      'First Name: ' + (data.get('firstName') || ''),
+      'Last Name: '  + (data.get('lastName')  || ''),
+      'Email: '      + (data.get('email')      || ''),
+      'Company: '    + (data.get('company')    || ''),
+      'Role: '       + (data.get('role')       || 'Not specified'),
+      'Size: '       + (data.get('companySize')|| 'Not specified'),
+      '',
+      'Message:',
+      (data.get('message') || 'No message provided'),
+    ].join('\n');
+    const subject = encodeURIComponent('Demo Request — ' + (data.get('company') || 'New Lead'));
+    window.location.href = 'mailto:info@crowsnestsecurity.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+    setTimeout(() => {
+      document.getElementById('formContent').style.display = 'none';
+      const s = document.getElementById('formSuccess');
+      s.style.display = 'block';
+    }, 500);
+  });
+</script>
+</body>
+</html>
