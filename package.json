@@ -1,0 +1,16 @@
+{
+  "name": "websitev2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for crowsnestsecurity.com (GitHub Pages)",
+  "scripts": {
+    "deploy": "gh-pages -d public -b gh-pages",
+    "serve": "npx --yes serve public -p 3000"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}
