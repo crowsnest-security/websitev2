@@ -370,7 +370,7 @@
       (data.get('message') || 'No message provided'),
     ].join('\n');
     const subject = encodeURIComponent('Demo Request — ' + (data.get('company') || 'New Lead'));
-    window.location.href = 'mailto:demo@crowsnestsecurity.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+    window.location.href = 'mailto:info@crowsnestsecurity.com?subject=' + subject + '&body=' + encodeURIComponent(body);
     setTimeout(() => {
       document.getElementById('formContent').style.display = 'none';
       const s = document.getElementById('formSuccess');
