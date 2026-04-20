@@ -340,7 +340,7 @@
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14l7 7 11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <h3>Request received.</h3>
-      <p>We'll be in touch within 24 hours to confirm your session.<br><br>In the meantime, feel free to reach out directly at <a href="/cdn-cgi/l/email-protection#ed89888082ad8e9f829a9e83889e999e888e989f849994c38e8280" style="color:var(--cyan)"><span class="__cf_email__" data-cfemail="90f4f5fdffd0f3e2ffe7e3fef5e3e4e3f5f3e5e2f9e4e9bef3fffd">[email&#160;protected]</span></a></p>
+      <p>We'll be in touch within 24 hours to confirm your session.<br><br>In the meantime, feel free to reach out directly at <a href="mailto:info@crowsnestsecurity.com" style="color:var(--cyan)">info@crowsnestsecurity.com</a></p>
     </div>
   </div>
 </main>
@@ -354,28 +354,38 @@
   <span class="footer-copy">© 2026 CrowsNest Systems, Inc. </span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" defer></script><script>
-  document.getElementById('demoForm').addEventListener('submit', function(e) {
+<script>
+  const WEB3FORMS_KEY = '5dd2bfd6-74ed-48ef-9a83-c35becc475c8';
+
+  const form = document.getElementById('demoForm');
+  const btn  = form.querySelector('.form-submit');
+
+  form.addEventListener('submit', async function(e) {
     e.preventDefault();
+
     const data = new FormData(this);
-    const body = [
-      'First Name: ' + (data.get('firstName') || ''),
-      'Last Name: '  + (data.get('lastName')  || ''),
-      'Email: '      + (data.get('email')      || ''),
-      'Company: '    + (data.get('company')    || ''),
-      'Role: '       + (data.get('role')       || 'Not specified'),
-      'Size: '       + (data.get('companySize')|| 'Not specified'),
-      '',
-      'Message:',
-      (data.get('message') || 'No message provided'),
-    ].join('\n');
-    const subject = encodeURIComponent('Demo Request — ' + (data.get('company') || 'New Lead'));
-    window.location.href = 'mailto:info@crowsnestsecurity.com?subject=' + subject + '&body=' + encodeURIComponent(body);
-    setTimeout(() => {
-      document.getElementById('formContent').style.display = 'none';
-      const s = document.getElementById('formSuccess');
-      s.style.display = 'block';
-    }, 500);
+    data.append('access_key', WEB3FORMS_KEY);
+    data.append('subject', 'Demo Request — ' + (data.get('company') || 'New Lead'));
+    data.append('from_name', 'CrowsNest Demo Form');
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+      const json = await res.json();
+      if (json.success) {
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        throw new Error(json.message);
+      }
+    } catch (err) {
+      console.error('Form error:', err);
+      btn.disabled = false;
+      btn.innerHTML = 'Request Demo <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      alert('Something went wrong. Please email us directly at info@crowsnestsecurity.com');
+    }
   });
 </script>
 </body>
